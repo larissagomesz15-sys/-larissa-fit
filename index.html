@@ -1,139 +1,59 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" />
-  <title>Larissa Fit</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">LARISSA • TREINO</p>
-        <h1 id="todayTitle">Seu treino de hoje</h1>
-        <p id="phaseText" class="muted"></p>
-      </div>
-      <button class="icon-btn" id="settingsBtn" aria-label="Configurações">⚙️</button>
-    </header>
-
-    <main>
-      <section class="card hero">
-        <div>
-          <span class="pill" id="planPill">3x por semana</span>
-          <h2 id="workoutName">LEG + GLÚTEO + CORE</h2>
-          <p id="workoutMeta" class="muted">6 exercícios • ~40 min</p>
-        </div>
-        <button class="primary" id="startWorkoutBtn">Começar treino</button>
-      </section>
-
-      <section class="card">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">ÁGUA HOJE</p>
-            <h2><span id="waterNow">0</span> / <span id="waterGoal">2000</span> ml</h2>
-          </div>
-          <span id="waterPct" class="big-stat">0%</span>
-        </div>
-        <div class="progress"><div id="waterBar"></div></div>
-        <div class="quick-actions">
-          <button data-water="200">+200 ml</button>
-          <button data-water="300">+300 ml</button>
-          <button data-water="500">+500 ml</button>
-          <button id="undoWater">Desfazer</button>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">ESTA SEMANA</p>
-            <h2>Seu progresso</h2>
-          </div>
-        </div>
-        <div class="stats-grid">
-          <div><span class="muted">Treinos</span><strong id="weeklyWorkouts">0 / 3</strong></div>
-          <div><span class="muted">Água na meta</span><strong id="weeklyWater">0 dias</strong></div>
-          <div><span class="muted">Fase</span><strong id="phaseStat">1 / 3</strong></div>
-          <div><span class="muted">Semana</span><strong id="weekStat">1 / 4</strong></div>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">PROGRAMA</p>
-            <h2>Escolha sua frequência</h2>
-          </div>
-        </div>
-        <div class="segmented">
-          <button id="plan3Btn" class="active">3 dias</button>
-          <button id="plan5Btn">5 dias</button>
-        </div>
-        <p class="muted small">O app redistribui os grupos musculares quando você muda a frequência.</p>
-      </section>
-    </main>
-
-    <nav class="bottom-nav">
-      <button data-tab="home" class="active">🏠<span>Início</span></button>
-      <button data-tab="workouts">🏋️<span>Treinos</span></button>
-      <button data-tab="water">💧<span>Água</span></button>
-      <button data-tab="progress">📈<span>Evolução</span></button>
-    </nav>
-  </div>
-
-  <dialog id="workoutDialog">
-    <form method="dialog" class="dialog-card">
-      <div class="dialog-head">
-        <div>
-          <p class="eyebrow">TREINO DE HOJE</p>
-          <h2 id="dialogWorkoutName"></h2>
-        </div>
-        <button class="icon-btn" value="cancel">✕</button>
-      </div>
-      <div id="exerciseList"></div>
-      <button type="button" class="primary full" id="finishWorkoutBtn">Finalizar treino</button>
-    </form>
-  </dialog>
-
-  <dialog id="settingsDialog">
-    <form method="dialog" class="dialog-card">
-      <div class="dialog-head">
-        <div>
-          <p class="eyebrow">AJUSTES</p>
-          <h2>Preferências</h2>
-        </div>
-        <button class="icon-btn" value="cancel">✕</button>
-      </div>
-
-      <label>Meta diária de água
-        <input id="waterGoalInput" type="number" min="500" step="100" />
-      </label>
-
-      <label>Lembretes de água
-        <select id="reminderInterval">
-          <option value="0">Desativados</option>
-          <option value="60">A cada 1 hora</option>
-          <option value="90">A cada 1h30</option>
-          <option value="120">A cada 2 horas</option>
-        </select>
-      </label>
-
-      <div class="two-cols">
-        <label>Começar
-          <input id="reminderStart" type="time" value="08:00" />
-        </label>
-        <label>Terminar
-          <input id="reminderEnd" type="time" value="22:00" />
-        </label>
-      </div>
-
-      <button type="button" class="primary full" id="saveSettings">Salvar ajustes</button>
-    </form>
-  </dialog>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111"><title>Larissa Fit V2</title><link rel="manifest" href="manifest.json"><style>
+:root{--bg:#f5f6f8;--card:#fff;--text:#17181a;--muted:#70747b;--line:#e6e8ec;--soft:#f0f1f3;--accent:#111}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}button,input,select{font:inherit}.app{max-width:560px;margin:auto;min-height:100vh;padding:18px 16px 96px}.topbar,.section-head,.dialog-head,.hero-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}h1{font-size:28px;line-height:1.05;margin:4px 0 6px}h2{font-size:20px;margin:5px 0}.eyebrow{font-size:11px;font-weight:900;letter-spacing:.12em;margin:0}.muted{color:var(--muted)}.small{font-size:13px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;margin-top:14px;box-shadow:0 5px 18px rgba(0,0,0,.035)}.hero{padding:22px}.pill{display:inline-flex;background:#111;color:#fff;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}.pill.secondary{background:var(--soft);color:var(--text)}.primary{border:0;background:#111;color:#fff;border-radius:14px;padding:14px 16px;font-weight:850;margin-top:16px}.full{width:100%}.icon-btn{border:1px solid var(--line);background:#fff;border-radius:12px;width:42px;height:42px}.progress{height:10px;background:var(--soft);border-radius:999px;overflow:hidden;margin:11px 0}.progress>div{height:100%;background:#111;width:0;transition:.25s}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.quick button,.seg button,.choice button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 8px;font-weight:750}.big{font-size:24px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:11px}.stats div{background:var(--soft);padding:14px;border-radius:16px}.stats span,.stats strong{display:block}.stats span{font-size:12px;color:var(--muted)}.stats strong{font-size:19px;margin-top:4px}.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--soft);padding:4px;border-radius:14px}.seg button{border:0;background:transparent}.seg .active{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.08)}.page{display:none}.page.active{display:block}.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(560px,100%);display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);padding:9px 12px calc(9px + env(safe-area-inset-bottom))}.bottom button{border:0;background:none;font-size:19px;color:var(--muted)}.bottom button.active{color:#111;font-weight:850}.bottom span{display:block;font-size:10px;margin-top:3px}dialog{border:0;border-radius:24px;padding:0;width:min(540px,calc(100% - 18px));max-height:92vh}dialog::backdrop{background:rgba(0,0,0,.4)}.dialog-card{padding:18px;overflow:auto;max-height:92vh}.question{font-weight:850;margin:18px 0 9px}.choice{display:grid;grid-template-columns:1fr 1fr;gap:8px}.choice button.selected{background:#111;color:#fff;border-color:#111}.exercise{border:1px solid var(--line);border-radius:18px;padding:14px;margin:12px 0}.exercise.done{opacity:.62}.exercise.done h3{text-decoration:line-through}.exercise-head{display:flex;justify-content:space-between;gap:8px}.exercise h3{margin:0 0 5px}.meta{font-size:13px;color:var(--muted)}.badge{display:inline-block;background:var(--soft);border-radius:999px;padding:5px 8px;font-size:11px;font-weight:850;margin-right:5px}.demo{height:90px;border-radius:14px;background:linear-gradient(135deg,#f0f1f3,#fafafa);display:flex;align-items:center;justify-content:center;margin:10px 0;overflow:hidden;position:relative}.demo .p{font-size:42px;animation:mv 1.4s ease-in-out infinite alternate}.demo .a{position:absolute;right:18px;font-size:30px;animation:pl .9s ease-in-out infinite alternate}@keyframes mv{to{transform:translateX(12px)}}@keyframes pl{to{transform:translateX(7px);opacity:.4}}.exercise details{margin-top:10px}.exercise summary{font-weight:800}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}label{display:block;font-weight:750;margin:12px 0}input,select{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fff}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.actions button,.mini button,.swap button{border:1px solid var(--line);background:var(--soft);border-radius:11px;padding:10px;font-weight:800}.note{font-size:13px;background:#fff6dc;border-radius:12px;padding:10px;margin-top:10px}.mini,.hist,.swap{border:1px solid var(--line);border-radius:15px;padding:13px;margin-top:10px;background:#fff}.mini{display:flex;justify-content:space-between;align-items:center;gap:10px}.phase div{display:flex;flex-direction:column;padding:12px 0;border-bottom:1px solid var(--line)}.phase span,.hist span{color:var(--muted);font-size:13px;margin-top:3px;display:block}.water-big strong,.water-big span{display:block}.water-big strong{font-size:34px}.water-big span{color:var(--muted)}.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:9px}.photos img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}.story{min-height:420px;border-radius:24px;background:#111;color:#fff;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;margin-top:14px}.story h2{font-size:30px}.story .num{font-size:58px;font-weight:950}.sticky{position:sticky;top:-18px;background:#fff;padding-top:18px;z-index:2}
+</style></head><body><div class="app"><header class="topbar"><div><p class="eyebrow">LARISSA • FIT</p><h1 id="pageTitle">Seu treino de hoje</h1><p class="muted" id="phaseText"></p></div><button class="icon-btn" id="settingsBtn">⚙️</button></header><main>
+<section class="page active" data-page="home"><section class="card hero"><div class="hero-top"><span class="pill" id="planPill"></span><span class="pill secondary" id="timePill"></span></div><h2 id="workoutName"></h2><p id="workoutMeta" class="muted"></p><button class="primary full" id="startBtn">Fazer check-in e montar treino</button></section><section class="card"><div class="section-head"><div><p class="eyebrow">ÁGUA HOJE</p><h2><span id="waterNow"></span> / <span id="waterGoal"></span> ml</h2></div><strong id="waterPct" class="big"></strong></div><div class="progress"><div id="waterBar"></div></div><div class="quick"><button data-water="200">+200</button><button data-water="300">+300</button><button data-water="500">+500</button><button id="undoWater">↶</button></div></section><section class="card"><p class="eyebrow">ESTA SEMANA</p><h2>Seu progresso</h2><div class="stats"><div><span>Treinos</span><strong id="weeklyWorkouts"></strong></div><div><span>Água na meta</span><strong id="weeklyWater"></strong></div><div><span>Fase</span><strong id="phaseStat"></strong></div><div><span>Semana</span><strong id="weekStat"></strong></div></div></section><section class="card"><p class="eyebrow">PROGRAMA</p><h2>Frequência desta semana</h2><div class="seg"><button id="plan3">3 dias</button><button id="plan5">5 dias</button></div><p class="muted small">O app reorganiza a semana quando você muda a frequência.</p></section></section>
+<section class="page" data-page="workouts"><section class="card"><p class="eyebrow">SEUS TREINOS</p><h2>Semana atual</h2><div id="workoutCards"></div></section><section class="card"><p class="eyebrow">PROGRAMA DE 12 SEMANAS</p><h2>Progressão por fases</h2><div class="phase"><div><strong>Fase 1</strong><span>Semanas 1–4 • adaptação e execução</span></div><div><strong>Fase 2</strong><span>Semanas 5–8 • progressão de carga</span></div><div><strong>Fase 3</strong><span>Semanas 9–12 • mais volume/intensidade</span></div></div></section></section>
+<section class="page" data-page="water"><section class="card"><p class="eyebrow">HIDRATAÇÃO</p><h2>Hoje</h2><div class="water-big"><strong id="waterPageNow"></strong><span id="waterPageGoal"></span></div><div class="progress"><div id="waterPageBar"></div></div><div class="quick"><button data-water="200">+200 ml</button><button data-water="300">+300 ml</button><button data-water="500">+500 ml</button><button id="customWater">Outro</button></div></section><section class="card"><p class="eyebrow">ÚLTIMOS 7 DIAS</p><div id="waterHistory"></div></section></section>
+<section class="page" data-page="progress"><section class="card"><p class="eyebrow">EVOLUÇÃO CORPORAL</p><h2>Fotos, peso e medidas</h2><p class="muted">Registre sua evolução por data.</p><button class="primary full" id="newBody">+ Novo registro</button></section><section class="card"><p class="eyebrow">RESUMO ATUAL</p><div class="stats"><div><span>Peso</span><strong id="curWeight">—</strong></div><div><span>Cintura</span><strong id="curWaist">—</strong></div><div><span>Abdômen</span><strong id="curAbd">—</strong></div><div><span>Registros</span><strong id="bodyCount">0</strong></div></div></section><section class="card"><p class="eyebrow">HISTÓRICO</p><div id="bodyHistory"></div></section></section></main><nav class="bottom"><button data-tab="home" class="active">🏠<span>Início</span></button><button data-tab="workouts">🏋️<span>Treinos</span></button><button data-tab="water">💧<span>Água</span></button><button data-tab="progress">📈<span>Evolução</span></button></nav></div>
+<dialog id="checkin"><form method="dialog" class="dialog-card"><div class="dialog-head"><div><p class="eyebrow">CHECK-IN</p><h2>Como vai ser hoje?</h2></div><button class="icon-btn" value="cancel">✕</button></div><p class="question">Quanto tempo você tem?</p><div class="choice" id="timeChoices"><button type="button" data-time="30">30 min</button><button type="button" data-time="45">45 min</button><button type="button" data-time="60" class="selected">60 min</button><button type="button" data-time="75">+1h</button></div><p class="question">Como você está?</p><div class="choice" id="energyChoices"><button type="button" data-energy="Bem" class="selected">🙂 Bem</button><button type="button" data-energy="Cansada">😴 Cansada</button><button type="button" data-energy="Pouco fôlego">😮‍💨 Pouco fôlego</button><button type="button" data-energy="Animada">🔥 Animada</button></div><button type="button" class="primary full" id="buildBtn">Montar treino de hoje</button></form></dialog>
+<dialog id="workoutDlg"><form method="dialog" class="dialog-card"><div class="dialog-head sticky"><div><p class="eyebrow">TREINO MONTADO</p><h2 id="dlgName"></h2><p class="muted" id="dlgMeta"></p></div><button class="icon-btn" value="cancel">✕</button></div><div><span id="doneCounter"></span><div class="progress"><div id="doneBar"></div></div></div><div id="exerciseList"></div><button type="button" class="primary full" id="finishBtn">Finalizar treino</button></form></dialog>
+<dialog id="swapDlg"><form method="dialog" class="dialog-card"><div class="dialog-head"><div><p class="eyebrow">TROCAR EXERCÍCIO</p><h2 id="swapTitle"></h2></div><button class="icon-btn" value="cancel">✕</button></div><p class="muted">A nova opção substitui o exercício e a ficha fica reorganizada.</p><div id="swapOptions"></div></form></dialog>
+<dialog id="bodyDlg"><form method="dialog" class="dialog-card"><div class="dialog-head"><div><p class="eyebrow">NOVO REGISTRO</p><h2>Evolução corporal</h2></div><button class="icon-btn" value="cancel">✕</button></div><div class="grid2"><label>Peso (kg)<input id="bWeight" type="number" step="0.1"></label><label>Cintura (cm)<input id="bWaist" type="number" step="0.1"></label><label>Abdômen (cm)<input id="bAbd" type="number" step="0.1"></label><label>Quadril (cm)<input id="bHip" type="number" step="0.1"></label><label>Coxa (cm)<input id="bThigh" type="number" step="0.1"></label><label>Braço (cm)<input id="bArm" type="number" step="0.1"></label></div><label>Fotos<input id="bPhotos" type="file" accept="image/*" multiple></label><p class="muted small">Nesta V2, as fotos ficam só neste navegador.</p><button type="button" class="primary full" id="saveBody">Salvar evolução</button></form></dialog>
+<dialog id="storyDlg"><form method="dialog" class="dialog-card"><div class="dialog-head"><div><p class="eyebrow">TREINO CONCLUÍDO</p><h2>Finalizado 💪</h2></div><button class="icon-btn" value="cancel">✕</button></div><div class="story"><p>LARISSA FIT</p><h2 id="storyWorkout"></h2><div class="num" id="storyDuration"></div><p id="storyDetails"></p><span id="storyDate"></span></div><button type="button" class="primary full" id="shareBtn">Compartilhar</button></form></dialog>
+<dialog id="settingsDlg"><form method="dialog" class="dialog-card"><div class="dialog-head"><div><p class="eyebrow">AJUSTES</p><h2>Preferências</h2></div><button class="icon-btn" value="cancel">✕</button></div><label>Meta de água<input id="goalInput" type="number" min="500" step="100"></label><label>Lembretes<select id="reminder"><option value="0">Desativados</option><option value="60">A cada 1 hora</option><option value="90">A cada 1h30</option><option value="120">A cada 2 horas</option></select></label><div class="grid2"><label>Começar<input id="rStart" type="time"></label><label>Terminar<input id="rEnd" type="time"></label></div><button type="button" class="primary full" id="saveSettings">Salvar</button></form></dialog>
+<script>
+const S=JSON.parse(localStorage.getItem('larissaFitV2')||'{}');Object.assign(S,{plan:S.plan||3,phase:S.phase||1,week:S.week||1,waterGoal:S.waterGoal||2000,water:S.water||{},workoutHistory:S.workoutHistory||[],loads:S.loads||{},bodyEntries:S.bodyEntries||[],settings:S.settings||{interval:90,start:'08:00',end:'22:00'},lastDuration:S.lastDuration||60});
+const E={
+legpress:['Leg press','Máquina de empurrar com as pernas','3×10–12','90s','Sente com as costas apoiadas, pés na largura dos ombros. Desça controlando e empurre sem travar os joelhos.','Solte o ar enquanto empurra.',['Agachamento com halter','Agachamento no banco','Passada estacionária']],
+extensora:['Cadeira extensora','Frente da coxa','3×12–15','75s','Estenda as pernas sem dar tranco e volte devagar.','Solte o ar ao estender.',['Agachamento com halter','Step-up','Agachamento no banco']],
+flexora:['Cadeira/mesa flexora','Posterior da coxa','3×10–12','75s','Flexione os joelhos controlando e retorne sem soltar o peso.','Solte o ar ao flexionar.',['Stiff com halteres','Ponte de glúteo','Good morning sem peso']],
+stiff:['Stiff com halteres','Posterior e glúteo','3×10–12','90s','Leve o quadril para trás, pesos perto das pernas e coluna neutra.','Solte o ar ao subir.',['Cadeira flexora','Ponte de glúteo','Hip thrust']],
+hip:['Elevação de quadril','Glúteos','3×12–15','75s','Eleve o quadril sem exagerar na lombar e desça controlando.','Solte o ar ao subir.',['Ponte no chão','Hip thrust com halter','Coice na polia']],
+abdutora:['Cadeira abdutora','Lateral do glúteo','3×15–20','60s','Abra os joelhos contra a resistência e volte devagar.','Solte o ar ao abrir.',['Abdução em pé','Caminhada lateral com elástico','Elevação lateral da perna']],
+pant:['Panturrilha em pé','Panturrilhas','3×12–15','60s','Suba na ponta dos pés, segure um instante e desça controlando.','Solte o ar ao subir.',['Panturrilha sentada','Panturrilha no leg press','Panturrilha no degrau']],
+puxada:['Puxada alta','Costas','3×10–12','90s','Puxe a barra em direção à parte alta do peito sem jogar o tronco para trás.','Solte o ar ao puxar.',['Remada unilateral','Remada sentada','Puxada com elástico']],
+remada:['Remada sentada','Costas','3×10–12','90s','Puxe o pegador em direção ao abdômen, sem embalar o tronco.','Solte o ar ao puxar.',['Remada unilateral com halter','Remada curvada','Remada com elástico']],
+supino:['Supino com halteres','Peito','3×10–12','90s','Desça os halteres com controle e empurre de volta.','Solte o ar ao empurrar.',['Supino máquina','Flexão inclinada no banco','Crucifixo leve']],
+desenv:['Desenvolvimento com halteres','Ombros','3×10–12','75s','Empurre os halteres para cima sem travar os cotovelos.','Solte o ar ao subir.',['Desenvolvimento na máquina','Elevação lateral','Arnold press leve']],
+lateral:['Elevação lateral','Ombros','3×12–15','60s','Eleve os braços até próximo da linha dos ombros sem encolher o pescoço.','Solte o ar ao subir.',['Desenvolvimento','Elevação frontal','Máquina de ombro']],
+biceps:['Rosca de bíceps','Braços','3×10–12','60s','Mantenha os cotovelos próximos ao corpo e evite balançar.','Solte o ar ao subir.',['Rosca alternada','Rosca martelo','Rosca na polia']],
+triceps:['Tríceps na polia','Braços','3×10–12','60s','Cotovelos junto ao corpo. Estenda e volte controlando.','Solte o ar ao estender.',['Tríceps francês com halter','Tríceps banco leve','Tríceps com elástico']],
+pallof:['Pallof press','Core anti-rotação','3×10 cada lado','60s','De lado para a polia, empurre as mãos à frente sem deixar o tronco girar.','Solte o ar ao estender.',['Bird dog','Dead bug','Prancha curta']],
+dead:['Dead bug','Core profundo','3×8 cada lado','60s','Deitada, mova braço e perna opostos devagar, mantendo o abdômen controlado.','Expire durante o movimento.',['Bird dog','Marcha deitada','Pallof press']],
+bird:['Bird dog','Core e estabilidade','3×8 cada lado','60s','Em quatro apoios, estenda braço e perna opostos sem girar o quadril.','Expire ao estender.',['Dead bug','Pallof press','Marcha deitada']],
+vacuo:['Vácuo abdominal','Controle abdominal','3×15–20s','45s','Expire e puxe suavemente o abdômen para dentro, apenas enquanto estiver confortável.','Não force nem fique sem ar.',['Respiração diafragmática','Ativação abdominal deitada','Dead bug leve']],
+step:['Step-up','Pernas e glúteos','3×8 cada perna','90s','Suba em banco/degrau usando a perna de cima e desça devagar.','Solte o ar ao subir.',['Leg press','Agachamento no banco','Passada estacionária']]
+};
+const P3=[['LEG + GLÚTEO + CORE',['legpress','extensora','flexora','stiff','hip','abdutora','pant','dead','vacuo']],['COSTAS + BRAÇOS + CORE',['puxada','remada','supino','desenv','lateral','biceps','triceps','pallof']],['LEG + GLÚTEO + CORE',['legpress','step','flexora','stiff','hip','abdutora','pant','bird','dead']]];
+const P5=[['LEG',['legpress','extensora','flexora','stiff','pant','dead']],['COSTAS + BRAÇOS',['puxada','remada','desenv','biceps','triceps','pallof']],['GLÚTEO + CORE',['hip','stiff','abdutora','step','dead','bird','vacuo']],['SUPERIOR',['supino','puxada','remada','desenv','lateral','triceps','biceps']],['LEG + GLÚTEO',['legpress','step','flexora','stiff','hip','abdutora','pant']]];
+const $=id=>document.getElementById(id),save=()=>localStorage.setItem('larissaFitV2',JSON.stringify(S)),today=()=>new Date().toISOString().slice(0,10),water=()=>S.water[today()]||0,plans=()=>S.plan===3?P3:P5;
+let session={time:60,energy:'Bem',workout:null,start:null,done:new Set()};
+function idx(){const d=new Date().getDay();return S.plan===3?(d<=1?0:d<=3?1:2):Math.min(4,Math.max(0,d-1))}function tpl(){return plans()[idx()]}
+function make(template=tpl(),time=S.lastDuration,energy='Bem'){let n=time<=30?5:time<=45?6:time<=60?8:9;if(energy==='Cansada'||energy==='Pouco fôlego')n=Math.max(5,n-1);return{name:template[0],ex:template[1].slice(0,n).map(id=>({id,d:E[id]}))}}
+function setWater(v){S.water[today()]=Math.max(0,v);save();render()}
+function weekStart(){const n=new Date(),s=new Date(n);s.setDate(n.getDate()-((n.getDay()+6)%7));s.setHours(0,0,0,0);return s}
+function render(){const w=make();$('workoutName').textContent=w.name;$('workoutMeta').textContent=`${w.ex.length} exercícios • ~${S.lastDuration} min`;$('planPill').textContent=`${S.plan}x por semana`;$('timePill').textContent=`${S.lastDuration} min`;$('phaseText').textContent=`FASE ${S.phase} • SEMANA ${S.week}/4`;$('phaseStat').textContent=`${S.phase}/3`;$('weekStat').textContent=`${S.week}/4`;$('plan3').classList.toggle('active',S.plan===3);$('plan5').classList.toggle('active',S.plan===5);const ws=weekStart();$('weeklyWorkouts').textContent=`${S.workoutHistory.filter(x=>new Date(x.date)>=ws).length}/${S.plan}`;let wd=0;for(let i=0;i<7;i++){const d=new Date(ws);d.setDate(ws.getDate()+i);if((S.water[d.toISOString().slice(0,10)]||0)>=S.waterGoal)wd++}$('weeklyWater').textContent=`${wd} dias`;renderWater();renderCards();renderBody()}
+function renderWater(){const v=water(),p=Math.min(100,Math.round(v/S.waterGoal*100));$('waterNow').textContent=v;$('waterGoal').textContent=S.waterGoal;$('waterPct').textContent=`${p}%`;$('waterBar').style.width=p+'%';$('waterPageNow').textContent=`${v} ml`;$('waterPageGoal').textContent=`Meta: ${S.waterGoal} ml`;$('waterPageBar').style.width=p+'%';$('waterHistory').innerHTML='';for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const k=d.toISOString().slice(0,10),a=S.water[k]||0;$('waterHistory').insertAdjacentHTML('beforeend',`<div class="hist"><strong>${d.toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'})}</strong><span>${a}/${S.waterGoal} ml ${a>=S.waterGoal?'✅':''}</span></div>`)}}
+function renderCards(){$('workoutCards').innerHTML='';plans().forEach((w,i)=>{const d=document.createElement('div');d.className='mini';d.innerHTML=`<div><strong>${i+1}. ${w[0]}</strong><span class="muted small">${w[1].length} exercícios disponíveis</span></div><button>Abrir</button>`;d.querySelector('button').onclick=()=>{session={time:S.lastDuration,energy:'Bem',workout:make(w,S.lastDuration,'Bem'),start:Date.now(),done:new Set()};openWorkout()};$('workoutCards').appendChild(d)})}
+function renderBody(){const a=[...S.bodyEntries].sort((x,y)=>new Date(y.date)-new Date(x.date)),l=a[0];$('curWeight').textContent=l?.weight?l.weight+' kg':'—';$('curWaist').textContent=l?.waist?l.waist+' cm':'—';$('curAbd').textContent=l?.abd?l.abd+' cm':'—';$('bodyCount').textContent=a.length;$('bodyHistory').innerHTML=a.length?'':'<div class="hist"><span>Nenhum registro ainda.</span></div>';a.forEach(e=>{$('bodyHistory').insertAdjacentHTML('beforeend',`<div class="hist"><strong>${new Date(e.date).toLocaleDateString('pt-BR')}</strong><span>${e.weight?e.weight+' kg • ':''}${e.waist?'cintura '+e.waist+' cm • ':''}${e.abd?'abdômen '+e.abd+' cm':''}</span></div>`)})}
+document.querySelectorAll('[data-water]').forEach(b=>b.onclick=()=>setWater(water()+Number(b.dataset.water)));$('undoWater').onclick=()=>setWater(water()-200);$('customWater').onclick=()=>{const n=Number(prompt('Quantos ml você bebeu?'));if(n>0)setWater(water()+n)};$('plan3').onclick=()=>{S.plan=3;save();render()};$('plan5').onclick=()=>{S.plan=5;save();render()};
+document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.bottom button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.dataset.page===b.dataset.tab));$('pageTitle').textContent={home:'Seu treino de hoje',workouts:'Seus treinos',water:'Hidratação',progress:'Sua evolução'}[b.dataset.tab]});
+$('startBtn').onclick=()=>{$('checkin').showModal()};document.querySelectorAll('[data-time]').forEach(b=>b.onclick=()=>{session.time=Number(b.dataset.time);document.querySelectorAll('[data-time]').forEach(x=>x.classList.toggle('selected',x===b))});document.querySelectorAll('[data-energy]').forEach(b=>b.onclick=()=>{session.energy=b.dataset.energy;document.querySelectorAll('[data-energy]').forEach(x=>x.classList.toggle('selected',x===b))});$('buildBtn').onclick=()=>{S.lastDuration=session.time;save();session.workout=make(tpl(),session.time,session.energy);session.start=Date.now();session.done=new Set();$('checkin').close();openWorkout();render()};
+function openWorkout(){$('dlgName').textContent=session.workout.name;$('dlgMeta').textContent=`${session.workout.ex.length} exercícios • ${session.time} min • ${session.energy}`;drawExercises();$('workoutDlg').showModal()}
+function drawExercises(){$('exerciseList').innerHTML='';session.workout.ex.forEach((e,i)=>{const d=e.d,key=`${S.phase}-${S.plan}-${session.workout.name}-${d[0]}`,el=document.createElement('div');el.className='exercise'+(session.done.has(i)?' done':'');el.innerHTML=`<div class="exercise-head"><div><h3>${i+1}. ${d[0]}</h3><div class="meta">${d[1]}</div></div><button class="icon-btn doneBtn">${session.done.has(i)?'✓':'○'}</button></div><div class="demo"><div class="p">🏋️</div><div class="a">↔</div></div><span class="badge">${d[2]}</span><span class="badge">Descanso ${d[3]}</span><details><summary>Como fazer</summary><p>${d[4]}</p><p><strong>Respiração:</strong> ${d[5]}</p><div class="note">Se ficar sem fôlego, pare, recupere a respiração e continue depois.</div></details><div class="grid2"><label>Carga (kg)<input class="load" type="number" value="${S.loads[key]||''}"></label><label>Como ficou?<select><option>Na medida</option><option>Muito fácil</option><option>Muito pesado</option><option>Fiquei sem fôlego</option><option>Senti dor</option></select></label></div><div class="actions"><button class="swapBtn">🔄 Trocar</button><button class="doneText">${session.done.has(i)?'Desmarcar':'✓ Concluir'}</button></div>`;el.querySelector('.load').onchange=x=>{S.loads[key]=x.target.value;save()};const tog=()=>{session.done.has(i)?session.done.delete(i):session.done.add(i);drawExercises()};el.querySelector('.doneBtn').onclick=tog;el.querySelector('.doneText').onclick=tog;el.querySelector('.swapBtn').onclick=()=>openSwap(i);$('exerciseList').appendChild(el)});$('doneCounter').textContent=`${session.done.size} de ${session.workout.ex.length} concluídos`;$('doneBar').style.width=(session.done.size/session.workout.ex.length*100)+'%'}
+function openSwap(i){const cur=session.workout.ex[i].d;$('swapTitle').textContent=cur[0];$('swapOptions').innerHTML='';cur[6].forEach(n=>{const found=Object.entries(E).find(([k,v])=>v[0]===n),d=document.createElement('div');d.className='swap';d.innerHTML=`<strong>${n}</strong><span class="muted small">${found?found[1][1]:'Alternativa'}</span><button class="full">Usar este exercício</button>`;d.querySelector('button').onclick=()=>{session.workout.ex[i]=found?{id:found[0],d:found[1]}:{id:'alt',d:[n,'Alternativa','3×10–12','75s','Faça com controle e carga confortável.','Solte o ar no esforço.',[]]};$('swapDlg').close();drawExercises()};$('swapOptions').appendChild(d)});$('swapDlg').showModal()}
+$('finishBtn').onclick=()=>{const m=Math.max(1,Math.round((Date.now()-(session.start||Date.now()))/60000));S.workoutHistory.push({date:new Date().toISOString(),workout:session.workout.name,duration:m});save();$('workoutDlg').close();$('storyWorkout').textContent=session.workout.name;$('storyDuration').textContent=m+' min';$('storyDetails').textContent=`${session.done.size}/${session.workout.ex.length} exercícios concluídos • Fase ${S.phase} • Semana ${S.week}`;$('storyDate').textContent=new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'long'});$('storyDlg').showModal();render()};$('shareBtn').onclick=async()=>{const t=`Treino concluído 💪\n${$('storyWorkout').textContent}\n${$('storyDuration').textContent}\n${$('storyDetails').textContent}`;if(navigator.share){try{await navigator.share({title:'Larissa Fit',text:t})}catch(e){}}else{await navigator.clipboard.writeText(t);alert('Resumo copiado.')}};
+$('newBody').onclick=()=>$('bodyDlg').showModal();$('saveBody').onclick=()=>{S.bodyEntries.push({date:new Date().toISOString(),weight:$('bWeight').value,waist:$('bWaist').value,abd:$('bAbd').value,hip:$('bHip').value,thigh:$('bThigh').value,arm:$('bArm').value});save();['bWeight','bWaist','bAbd','bHip','bThigh','bArm'].forEach(id=>$(id).value='');$('bodyDlg').close();renderBody();alert('Medidas salvas. As fotos serão ativadas na próxima etapa com armazenamento seguro.')};
+$('settingsBtn').onclick=()=>{$('goalInput').value=S.waterGoal;$('reminder').value=S.settings.interval;$('rStart').value=S.settings.start;$('rEnd').value=S.settings.end;$('settingsDlg').showModal()};$('saveSettings').onclick=async()=>{S.waterGoal=Number($('goalInput').value)||2000;S.settings={interval:Number($('reminder').value),start:$('rStart').value,end:$('rEnd').value};save();if(S.settings.interval>0&&'Notification'in window)try{await Notification.requestPermission()}catch(e){}$('settingsDlg').close();render()};
+render();save();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script></body></html>
