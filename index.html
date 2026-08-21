@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Larissa Fit</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">LARISSA • TREINO</p>
+        <h1 id="todayTitle">Seu treino de hoje</h1>
+        <p id="phaseText" class="muted"></p>
+      </div>
+      <button class="icon-btn" id="settingsBtn" aria-label="Configurações">⚙️</button>
+    </header>
+
+    <main>
+      <section class="card hero">
+        <div>
+          <span class="pill" id="planPill">3x por semana</span>
+          <h2 id="workoutName">LEG + GLÚTEO + CORE</h2>
+          <p id="workoutMeta" class="muted">6 exercícios • ~40 min</p>
+        </div>
+        <button class="primary" id="startWorkoutBtn">Começar treino</button>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">ÁGUA HOJE</p>
+            <h2><span id="waterNow">0</span> / <span id="waterGoal">2000</span> ml</h2>
+          </div>
+          <span id="waterPct" class="big-stat">0%</span>
+        </div>
+        <div class="progress"><div id="waterBar"></div></div>
+        <div class="quick-actions">
+          <button data-water="200">+200 ml</button>
+          <button data-water="300">+300 ml</button>
+          <button data-water="500">+500 ml</button>
+          <button id="undoWater">Desfazer</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">ESTA SEMANA</p>
+            <h2>Seu progresso</h2>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div><span class="muted">Treinos</span><strong id="weeklyWorkouts">0 / 3</strong></div>
+          <div><span class="muted">Água na meta</span><strong id="weeklyWater">0 dias</strong></div>
+          <div><span class="muted">Fase</span><strong id="phaseStat">1 / 3</strong></div>
+          <div><span class="muted">Semana</span><strong id="weekStat">1 / 4</strong></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">PROGRAMA</p>
+            <h2>Escolha sua frequência</h2>
+          </div>
+        </div>
+        <div class="segmented">
+          <button id="plan3Btn" class="active">3 dias</button>
+          <button id="plan5Btn">5 dias</button>
+        </div>
+        <p class="muted small">O app redistribui os grupos musculares quando você muda a frequência.</p>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button data-tab="home" class="active">🏠<span>Início</span></button>
+      <button data-tab="workouts">🏋️<span>Treinos</span></button>
+      <button data-tab="water">💧<span>Água</span></button>
+      <button data-tab="progress">📈<span>Evolução</span></button>
+    </nav>
+  </div>
+
+  <dialog id="workoutDialog">
+    <form method="dialog" class="dialog-card">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">TREINO DE HOJE</p>
+          <h2 id="dialogWorkoutName"></h2>
+        </div>
+        <button class="icon-btn" value="cancel">✕</button>
+      </div>
+      <div id="exerciseList"></div>
+      <button type="button" class="primary full" id="finishWorkoutBtn">Finalizar treino</button>
+    </form>
+  </dialog>
+
+  <dialog id="settingsDialog">
+    <form method="dialog" class="dialog-card">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">AJUSTES</p>
+          <h2>Preferências</h2>
+        </div>
+        <button class="icon-btn" value="cancel">✕</button>
+      </div>
+
+      <label>Meta diária de água
+        <input id="waterGoalInput" type="number" min="500" step="100" />
+      </label>
+
+      <label>Lembretes de água
+        <select id="reminderInterval">
+          <option value="0">Desativados</option>
+          <option value="60">A cada 1 hora</option>
+          <option value="90">A cada 1h30</option>
+          <option value="120">A cada 2 horas</option>
+        </select>
+      </label>
+
+      <div class="two-cols">
+        <label>Começar
+          <input id="reminderStart" type="time" value="08:00" />
+        </label>
+        <label>Terminar
+          <input id="reminderEnd" type="time" value="22:00" />
+        </label>
+      </div>
+
+      <button type="button" class="primary full" id="saveSettings">Salvar ajustes</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
