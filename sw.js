@@ -1,4 +1,4 @@
-const CACHE='larissa-fit-v4-20260824';
+const CACHE='larissa-fit-v5-20260825';
 const ASSETS=['./','./index.html','./manifest.json'];
 self.addEventListener('install',event=>{
   self.skipWaiting();
