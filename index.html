@@ -68,46 +68,45 @@
 .exercise-nav .prevExercise{background:#fff;color:#5e6069}
 .exercise-nav .nextExercise{border-color:var(--fit);background:var(--fit);color:#fff;box-shadow:0 9px 20px rgba(111,85,217,.22)}
 .exercise-nav .nextExercise:disabled,.exercise-nav .prevExercise:disabled{opacity:.38;box-shadow:none}
-.exercise-demo{margin:7px 14px 2px;border:0;border-radius:20px;background:linear-gradient(145deg,#fbfbfd,#f4f1fb);padding:12px}
-.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.demo-panel{position:relative;background:#fff;border:1px solid #edeaf4;border-radius:17px;padding:27px 4px 6px;min-height:158px;overflow:hidden}
-.demo-panel svg{width:100%;height:124px;display:block}
-.demo-step{position:absolute;z-index:2;top:8px;left:9px;background:var(--fit);color:#fff;border-radius:999px;padding:4px 7px;font-size:9px;font-weight:950;letter-spacing:.02em}
-.demo-cue{margin-top:9px;text-align:center;font-size:11px;font-weight:900;color:#555862}
-.demo-cue span{display:inline-block;background:#fff;border:1px solid #e9e6f2;border-radius:999px;padding:6px 10px}
-.exercise-demo .frame{stroke:#c9c5cf;stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.exercise-demo .person{stroke:#d39a77;stroke-width:16;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.exercise-demo .person-core{stroke:#8b5f50;stroke-width:5;opacity:.30;fill:none}
-.exercise-demo .head{fill:#efc6a7;stroke:#9a6e59;stroke-width:2}
-.exercise-demo .hair{fill:#5b443b;stroke:none}
-.exercise-demo .weight{fill:#626873}
-.exercise-demo .muscle{fill:rgba(220,75,92,.72);stroke:#c94d5f;stroke-width:1}
-.exercise-demo .accent{stroke:#d85467;stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:5 5}
-.exercise-demo .ground{stroke:#e3e0e8;stroke-width:4}
-.exercise-demo .seat{fill:#dfe2e7;stroke:#bcc1ca;stroke-width:2}
-.exercise-demo .platform{fill:#eef0f4;stroke:#bcc1ca;stroke-width:3}
-.swap .exercise-demo{margin:9px 0}.swap .demo-panel{min-height:132px}.swap .demo-panel svg{height:98px}
-@media(max-width:400px){.exercise-inputs{grid-template-columns:1fr}.demo-panel{min-height:145px}.demo-panel svg{height:112px}.focus-title h3{font-size:21px}}
-
-
-/* V8 — personagem ilustrado preenchido, sem aparência de boneco-palito */
-.exercise-demo .person,.exercise-demo .person-core{display:none}
+.exercise-demo{margin:8px 14px 4px;border:0;border-radius:22px;background:linear-gradient(145deg,#fbfbfd,#f3f0fb);padding:12px}
+.motion-stage{position:relative;background:linear-gradient(180deg,#fff 0%,#fcfbff 100%);border:1px solid #ebe7f3;border-radius:20px;overflow:hidden;min-height:238px}
+.motion-button{appearance:none;-webkit-appearance:none;width:100%;border:0;background:transparent;padding:34px 8px 14px;display:block;cursor:pointer;color:inherit;position:relative}
+.motion-button:focus-visible{outline:3px solid rgba(111,85,217,.25);outline-offset:-3px}
+.motion-button svg{width:100%;height:180px;display:block}
+.motion-label{position:absolute;z-index:4;top:10px;left:11px;background:var(--fit);color:#fff;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:950;letter-spacing:.01em;box-shadow:0 5px 14px rgba(111,85,217,.2)}
+.motion-state{position:absolute;z-index:4;top:10px;right:11px;background:#fff;color:#555862;border:1px solid #e8e4f1;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:900}
+.motion-hint{text-align:center;margin:9px 0 1px;font-size:11px;font-weight:900;color:#555862}
+.motion-hint span{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #e9e6f2;border-radius:999px;padding:7px 11px}
+.motion-stage:after{content:"";position:absolute;left:14%;right:14%;bottom:19px;height:11px;background:rgba(40,35,60,.07);filter:blur(9px);border-radius:50%;pointer-events:none}
+.motion-stage .pose{transition:opacity .25s ease}
+.motion-stage .pose-b{opacity:0}
+.motion-stage.is-playing .pose-a{animation:poseA 2.4s ease-in-out infinite}
+.motion-stage.is-playing .pose-b{animation:poseB 2.4s ease-in-out infinite}
+@keyframes poseA{0%,38%{opacity:1}48%,88%{opacity:0}100%{opacity:1}}
+@keyframes poseB{0%,38%{opacity:0}48%,88%{opacity:1}100%{opacity:0}}
+.exercise-demo .frame{stroke:#c8c4cf;stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .exercise-demo .human-outline,.exercise-demo .human-fill{fill:none;stroke-linecap:round;stroke-linejoin:round}
-.exercise-demo .human-outline.limb{stroke:#9b6f5c;stroke-width:20}
-.exercise-demo .human-fill.limb{stroke:#edbd9c;stroke-width:15}
-.exercise-demo .human-outline.torso{stroke:#433776;stroke-width:34}
-.exercise-demo .human-fill.torso{stroke:#7258d6;stroke-width:28}
+.exercise-demo .human-outline.limb{stroke:#9b6f5c;stroke-width:22}
+.exercise-demo .human-fill.limb{stroke:#efc09f;stroke-width:16}
+.exercise-demo .human-outline.torso{stroke:#40356f;stroke-width:36}
+.exercise-demo .human-fill.torso{stroke:#7258d6;stroke-width:29}
 .exercise-demo .shorts{fill:#514482;stroke:#433776;stroke-width:2}
 .exercise-demo .neck{fill:#e9b896;stroke:#9b6f5c;stroke-width:1.5}
 .exercise-demo .head{fill:#efc4a5;stroke:#9b6f5c;stroke-width:2}
 .exercise-demo .hair,.exercise-demo .ponytail{fill:#58443d}
 .exercise-demo .eye{fill:#4a3933}
 .exercise-demo .face-line{fill:none;stroke:#9d6858;stroke-width:1.5;stroke-linecap:round}
+.exercise-demo .weight{fill:#626873}
 .exercise-demo .muscle{fill:rgba(216,73,91,.82);stroke:#bd4052;stroke-width:1.5}
+.exercise-demo .accent{stroke:#d85467;stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:5 5}
+.exercise-demo .ground{stroke:#e3e0e8;stroke-width:4}
+.exercise-demo .seat{fill:#dfe2e7;stroke:#bcc1ca;stroke-width:2}
+.exercise-demo .platform{fill:#eef0f4;stroke:#bcc1ca;stroke-width:3}
 .exercise-demo .human-fill.limb{filter:drop-shadow(0 2px 1px rgba(66,48,41,.08))}
 .exercise-demo .human-fill.torso{filter:drop-shadow(0 2px 1px rgba(64,52,108,.12))}
-.exercise-demo .demo-panel{background:linear-gradient(180deg,#fff 0%,#fcfbff 100%)}
-.exercise-demo .demo-panel:after{content:"";position:absolute;left:12%;right:12%;bottom:10px;height:9px;background:rgba(40,35,60,.06);filter:blur(8px);border-radius:50%}
+.swap .motion-stage{min-height:190px}.swap .motion-button svg{height:136px}
+@media(max-width:400px){.exercise-inputs{grid-template-columns:1fr}.focus-title h3{font-size:21px}.motion-stage{min-height:220px}.motion-button svg{height:164px}}
+@media(prefers-reduced-motion:reduce){.motion-stage.is-playing .pose-a,.motion-stage.is-playing .pose-b{animation:none}.motion-stage.is-playing .pose-a{opacity:0}.motion-stage.is-playing .pose-b{opacity:1}}
 </style>
 </head>
 <body>
@@ -335,7 +334,17 @@ lunge:['<ellipse class="muscle" cx="113" cy="92" rx="10" ry="6"/>','<ellipse cla
 kick:['<ellipse class="muscle" cx="116" cy="86" rx="11" ry="7"/>','<ellipse class="muscle" cx="125" cy="84" rx="11" ry="7"/>'],
 plank:['<ellipse class="muscle" cx="117" cy="93" rx="14" ry="7"/>','<ellipse class="muscle" cx="117" cy="91" rx="14" ry="7"/>']
 };return (m[t]||['',''])[phase]||''};
-  return `<div class="exercise-demo" role="group" aria-label="Ilustração de como fazer ${e.name}"><div class="demo-grid"><div class="demo-panel"><span class="demo-step">1. Início</span><svg viewBox="0 0 240 135" role="img" aria-label="Posição inicial de ${e.name}">${frame}<g>${a}${muscle(0)}</g></svg></div><div class="demo-panel"><span class="demo-step">2. Movimento</span><svg viewBox="0 0 240 135" role="img" aria-label="Posição do movimento de ${e.name}">${frame}<g>${b}${muscle(1)}</g></svg></div></div><div class="demo-cue"><span>↔ ${labels[t]||'Execute o movimento com controle'}</span></div></div>`;
+  return `<div class="exercise-demo" role="group" aria-label="Demonstração de ${e.name}"><div class="motion-stage"><button type="button" class="motion-button" aria-label="Ver movimento de ${e.name}" aria-pressed="false" onclick="toggleExerciseMotion(this)"><span class="motion-label">▶ Ver movimento</span><span class="motion-state">Toque para animar</span><svg viewBox="0 0 240 135" role="img" aria-label="Demonstração animada de ${e.name}">${frame}<g class="pose pose-a">${a}${muscle(0)}</g><g class="pose pose-b">${b}${muscle(1)}</g></svg></button></div><div class="motion-hint"><span>↔ ${labels[t]||'Execute o movimento com controle'}</span></div></div>`;
+}
+function toggleExerciseMotion(btn){
+  const stage=btn.closest('.motion-stage');
+  if(!stage)return;
+  const playing=stage.classList.toggle('is-playing');
+  btn.setAttribute('aria-pressed',playing?'true':'false');
+  const label=btn.querySelector('.motion-label');
+  const state=btn.querySelector('.motion-state');
+  if(label)label.textContent=playing?'⏸ Pausar':'▶ Ver movimento';
+  if(state)state.textContent=playing?'Em movimento':'Toque para animar';
 }
 function render(){const w=currentWorkout();$('workoutName').textContent=w.name;$('workoutMeta').textContent=`${w.ex.length} exercícios • ~${S.lastDuration||60} min`;$('planPill').textContent=`${S.plan}x por semana`;$('timePill').textContent=`~${S.lastDuration||60} min`;$('phaseText').textContent=`FASE ${S.phase} • SEMANA ${S.week}/4`;$('phaseStat').textContent=`${S.phase} / 3`;$('weekStat').textContent=`${S.week} / 4`;$('waterGoal').textContent=S.waterGoal;$('waterNow').textContent=waterToday();const pct=Math.min(100,Math.round(waterToday()/S.waterGoal*100));$('waterPct').textContent=`${pct}%`;$('waterBar').style.width=pct+'%';$('plan3').classList.toggle('active',S.plan===3);$('plan5').classList.toggle('active',S.plan===5);$('weeklyWorkouts').textContent=`${weeklyWorkoutCount()} / ${S.plan}`;$('weeklyWater').textContent=`${weeklyWaterGoalDays()} dias`;renderWorkoutCards();renderWater();renderBody()}
 function renderWorkoutCards(){$('workoutCards').innerHTML=PROGRAMS[S.plan].map((p,i)=>`<div class="hist"><strong>${i+1}. ${p.name}</strong><span>${p.ids.length} exercícios</span><button type="button" style="margin-top:8px" onclick="openSpecificWorkout(${i})">Abrir treino</button></div>`).join('')}
