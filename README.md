@@ -7,3 +7,8 @@ Observação: nesta V2 as medidas ficam salvas no navegador. O seletor de fotos 
 
 ## V3 — Bonecos animados
 Cada exercício agora tem uma animação própria de acordo com o movimento.
+
+
+## Créditos das ilustrações
+
+Exercise data by [RepDB](https://repdb.co)
