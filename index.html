@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#111111">
-<title>Larissa Fit V6</title>
+<title>Larissa Fit V7</title>
 <link rel="manifest" href="manifest.json">
 <style>
 :root{--bg:#f5f6f8;--card:#fff;--text:#17181a;--muted:#70747b;--line:#e6e8ec;--soft:#f0f1f3;--accent:#111;--ok:#147d4c;--warn:#9a6500}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}button,input,select{font:inherit}.app{max-width:560px;margin:auto;min-height:100vh;padding:18px 16px 96px}.topbar,.section-head,.dialog-head,.hero-top,.exercise-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}h1{font-size:28px;line-height:1.05;margin:4px 0 6px}h2{font-size:20px;margin:5px 0}.eyebrow{font-size:11px;font-weight:900;letter-spacing:.12em;margin:0}.muted{color:var(--muted)}.small{font-size:13px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;margin-top:14px;box-shadow:0 5px 18px rgba(0,0,0,.035)}.hero{padding:22px}.pill{display:inline-flex;background:#111;color:#fff;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}.pill.secondary{background:var(--soft);color:var(--text)}.primary{border:0;background:#111;color:#fff;border-radius:14px;padding:14px 16px;font-weight:850;margin-top:16px}.full{width:100%}.icon-btn{border:1px solid var(--line);background:#fff;border-radius:12px;width:42px;height:42px}.progress{height:10px;background:var(--soft);border-radius:999px;overflow:hidden;margin:11px 0}.progress>div{height:100%;background:#111;width:0;transition:.25s}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.quick button,.seg button,.choice button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 8px;font-weight:750}.big{font-size:24px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:11px}.stats div{background:var(--soft);padding:14px;border-radius:16px}.stats span,.stats strong{display:block}.stats span{font-size:12px;color:var(--muted)}.stats strong{font-size:19px;margin-top:4px}.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--soft);padding:4px;border-radius:14px}.seg button{border:0;background:transparent}.seg .active{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.08)}.page{display:none}.page.active{display:block}.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(560px,100%);display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);padding:9px 12px calc(9px + env(safe-area-inset-bottom));z-index:20}.bottom button{border:0;background:none;font-size:19px;color:var(--muted)}.bottom button.active{color:#111;font-weight:850}.bottom span{display:block;font-size:10px;margin-top:3px}dialog{border:0;border-radius:24px;padding:0;width:min(540px,calc(100% - 18px));max-height:92vh}dialog::backdrop{background:rgba(0,0,0,.4)}.dialog-card{padding:18px;overflow:auto;max-height:92vh}.question{font-weight:850;margin:18px 0 9px}.choice{display:grid;grid-template-columns:1fr 1fr;gap:8px}.choice button.selected{background:#111;color:#fff;border-color:#111}.exercise{border:1px solid var(--line);border-radius:18px;padding:14px;margin:12px 0}.exercise.done{opacity:.62}.exercise.done h3{text-decoration:line-through}.exercise h3{margin:0 0 5px}.meta{font-size:13px;color:var(--muted)}.badge{display:inline-block;background:var(--soft);border-radius:999px;padding:5px 8px;font-size:11px;font-weight:850;margin:4px 5px 0 0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}label{display:block;font-weight:750;margin:12px 0}input,select{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fff}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.actions button,.swap button{border:1px solid var(--line);background:var(--soft);border-radius:11px;padding:10px;font-weight:800}.note{font-size:13px;background:#fff6dc;border-radius:12px;padding:10px;margin-top:10px}.hist,.swap{border:1px solid var(--line);border-radius:15px;padding:13px;margin-top:10px;background:#fff}.swap strong,.swap span{display:block}.swap .animbox{height:105px;margin:8px 0}.phase div{display:flex;flex-direction:column;padding:12px 0;border-bottom:1px solid var(--line)}.phase span,.hist span{color:var(--muted);font-size:13px;margin-top:3px;display:block}.water-big strong,.water-big span{display:block}.water-big strong{font-size:34px}.water-big span{color:var(--muted)}.story{min-height:420px;border-radius:24px;background:#111;color:#fff;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;margin-top:14px}.story h2{font-size:30px}.story .num{font-size:58px;font-weight:950}.sticky{position:sticky;top:-18px;background:#fff;padding-top:18px;z-index:2}
@@ -29,6 +29,65 @@
 .exercise-demo .person,.exercise-demo .head{filter:drop-shadow(0 1px 0 rgba(0,0,0,.05))}
 .swap .exercise-demo{margin:9px 0}.swap .demo-panel{min-height:122px;padding-top:25px}.swap .demo-panel svg{height:94px}
 @media(max-width:380px){.demo-grid{gap:7px}.demo-panel{padding-left:2px;padding-right:2px}.exercise-demo{padding:9px}}
+
+
+/* V7 — tela de treino premium + ilustrações mais próximas do modelo de referência */
+:root{--fit:#6f55d9;--fit-dark:#5841bd;--fit-soft:#f1edff;--fit-rose:#dd6b79;--fit-ink:#25262b}
+#workoutDlg{background:#f7f7fb}
+#workoutDlg .dialog-card{padding:16px;background:#f7f7fb}
+#workoutDlg .dialog-head{background:transparent;padding:4px 2px 10px;align-items:center}
+#workoutDlg .dialog-head h2{font-size:23px;margin:2px 0}
+#workoutDlg .sticky{top:-16px;padding-top:16px;background:rgba(247,247,251,.96);backdrop-filter:blur(14px)}
+#workoutDlg #doneCounter{display:block;font-size:12px;font-weight:850;color:#747780;margin:5px 2px 7px}
+#workoutDlg .progress{height:7px;background:#e6e2f4;margin:0 2px 12px}
+#workoutDlg .progress>div{background:linear-gradient(90deg,var(--fit),#9b84ef)}
+#workoutDlg #finishBtn{background:var(--fit);box-shadow:0 10px 24px rgba(111,85,217,.24)}
+.focus-exercise{border:0!important;border-radius:24px!important;padding:0!important;margin:8px 0 14px!important;background:#fff!important;box-shadow:0 14px 35px rgba(35,37,45,.08);overflow:hidden;opacity:1!important}
+.focus-exercise.done{opacity:1!important}
+.exercise-kicker{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 5px;font-size:10px;font-weight:950;letter-spacing:.08em;color:#7d7f88}
+.exercise-kicker .done-mini{letter-spacing:0;color:var(--fit);background:var(--fit-soft);border-radius:999px;padding:5px 8px}
+.focus-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:14px 18px 4px}
+.focus-title h3{font-size:23px;line-height:1.05;margin:0 0 5px!important;text-decoration:none!important;color:var(--fit-ink)}
+.focus-title .meta{font-size:13px}
+.focus-title .doneBtn{flex:0 0 auto;border-color:#ded9f4;background:var(--fit-soft);color:var(--fit);font-weight:950}
+.focus-title .doneBtn.is-done{background:var(--fit);color:#fff;border-color:var(--fit)}
+.focus-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:10px 18px}
+.focus-stat{background:#f7f6fb;border:1px solid #eceaf3;border-radius:15px;padding:11px 12px}
+.focus-stat small{display:block;font-size:9px;font-weight:950;letter-spacing:.08em;color:#8b8c94;margin-bottom:3px}
+.focus-stat strong{font-size:15px;color:#2b2c31}
+.focus-exercise details{margin:4px 18px 0;border:1px solid #eceaf3;background:#faf9fd;border-radius:15px;padding:11px 12px}
+.focus-exercise details summary{cursor:pointer;font-weight:900;color:#393a42}
+.focus-exercise details p{font-size:13px;line-height:1.45}
+.focus-exercise .note{background:#fff4e8}
+.exercise-inputs{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:5px 18px 0}
+.exercise-inputs label{font-size:12px;margin:8px 0 0}
+.exercise-inputs input,.exercise-inputs select{background:#fff;border-color:#e4e2eb}
+.swap-primary{margin:12px 18px 0;width:calc(100% - 36px);border:1px solid #ded9f4;background:#f5f2ff;color:var(--fit-dark);border-radius:13px;padding:11px;font-weight:900}
+.exercise-nav{display:grid;grid-template-columns:1fr 1.35fr;gap:9px;padding:14px 18px 18px}
+.exercise-nav button{border-radius:14px;padding:13px 10px;font-weight:950;border:1px solid #dedde5}
+.exercise-nav .prevExercise{background:#fff;color:#5e6069}
+.exercise-nav .nextExercise{border-color:var(--fit);background:var(--fit);color:#fff;box-shadow:0 9px 20px rgba(111,85,217,.22)}
+.exercise-nav .nextExercise:disabled,.exercise-nav .prevExercise:disabled{opacity:.38;box-shadow:none}
+.exercise-demo{margin:7px 14px 2px;border:0;border-radius:20px;background:linear-gradient(145deg,#fbfbfd,#f4f1fb);padding:12px}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.demo-panel{position:relative;background:#fff;border:1px solid #edeaf4;border-radius:17px;padding:27px 4px 6px;min-height:158px;overflow:hidden}
+.demo-panel svg{width:100%;height:124px;display:block}
+.demo-step{position:absolute;z-index:2;top:8px;left:9px;background:var(--fit);color:#fff;border-radius:999px;padding:4px 7px;font-size:9px;font-weight:950;letter-spacing:.02em}
+.demo-cue{margin-top:9px;text-align:center;font-size:11px;font-weight:900;color:#555862}
+.demo-cue span{display:inline-block;background:#fff;border:1px solid #e9e6f2;border-radius:999px;padding:6px 10px}
+.exercise-demo .frame{stroke:#c9c5cf;stroke-width:7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.exercise-demo .person{stroke:#d39a77;stroke-width:16;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.exercise-demo .person-core{stroke:#8b5f50;stroke-width:5;opacity:.30;fill:none}
+.exercise-demo .head{fill:#efc6a7;stroke:#9a6e59;stroke-width:2}
+.exercise-demo .hair{fill:#5b443b;stroke:none}
+.exercise-demo .weight{fill:#626873}
+.exercise-demo .muscle{fill:rgba(220,75,92,.72);stroke:#c94d5f;stroke-width:1}
+.exercise-demo .accent{stroke:#d85467;stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:5 5}
+.exercise-demo .ground{stroke:#e3e0e8;stroke-width:4}
+.exercise-demo .seat{fill:#dfe2e7;stroke:#bcc1ca;stroke-width:2}
+.exercise-demo .platform{fill:#eef0f4;stroke:#bcc1ca;stroke-width:3}
+.swap .exercise-demo{margin:9px 0}.swap .demo-panel{min-height:132px}.swap .demo-panel svg{height:98px}
+@media(max-width:400px){.exercise-inputs{grid-template-columns:1fr}.demo-panel{min-height:145px}.demo-panel svg{height:112px}.focus-title h3{font-size:21px}}
 
 </style>
 </head>
@@ -128,9 +187,9 @@ function weeklyWaterGoalDays(){const now=new Date(),start=new Date(now);start.se
 function anim(e){
   const t=e.anim||'squat';
   const labels={legpress:'Empurrar a plataforma',extension:'Estender os joelhos',curl:'Flexionar os joelhos',hinge:'Quadril para trás e subir',bridge:'Elevar o quadril',abduction:'Abrir e fechar',calf:'Subir na ponta dos pés',pulldown:'Puxar para baixo',row:'Puxar para o abdômen',press:'Empurrar acima da cabeça',lateral:'Elevar os braços',curlarm:'Dobrar os cotovelos',triceps:'Estender os cotovelos',bench:'Empurrar para cima',pallof:'Empurrar à frente',deadbug:'Braço e perna opostos',birddog:'Estender braço e perna',vacuum:'Controle abdominal',step:'Subir e descer',squat:'Agachar e subir',lunge:'Descer e subir',kick:'Levar a perna para trás',plank:'Manter o corpo alinhado'};
-  const H='<circle class="head" cx="0" cy="0" r="9"/>';
-  const line=(x1,y1,x2,y2,c='person')=>`<line class="${c}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
-  const head=(x,y)=>`<circle class="head" cx="${x}" cy="${y}" r="9"/>`;
+  const H='';
+  const line=(x1,y1,x2,y2,c='person')=>c==='person'?`<line class="person-core" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/><line class="person" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`:`<line class="${c}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+  const head=(x,y)=>`<circle class="head" cx="${x}" cy="${y}" r="10"/><path class="hair" d="M ${x-9} ${y-2} Q ${x} ${y-15} ${x+9} ${y-2} Q ${x+3} ${y-9} ${x-9} ${y-2} Z"/>`;
   let a='',b='',frame='';
   switch(t){
     case 'legpress':
@@ -222,7 +281,32 @@ function anim(e){
       a=`${head(120,36)}${line(120,46,120,81)}${line(120,81,101,116)}${line(120,81,139,116)}${line(120,58,96,75)}${line(120,58,144,75)}`;
       b=`${head(120,57)}${line(120,67,120,88)}${line(120,88,91,103)}${line(91,103,76,116)}${line(120,88,149,103)}${line(149,103,164,116)}${line(120,72,95,85)}${line(120,72,145,85)}`;
   }
-  return `<div class="exercise-demo" role="group" aria-label="Ilustração de como fazer ${e.name}"><div class="demo-grid"><div class="demo-panel"><span class="demo-step">1. Início</span><svg viewBox="0 0 240 135" role="img" aria-label="Posição inicial de ${e.name}">${frame}<g>${a}</g></svg></div><div class="demo-panel"><span class="demo-step">2. Movimento</span><svg viewBox="0 0 240 135" role="img" aria-label="Posição do movimento de ${e.name}">${frame}<g>${b}</g></svg></div></div><div class="demo-cue"><span>↔ ${labels[t]||'Execute o movimento com controle'}</span></div></div>`;
+  const muscle=(phase)=>{const m={
+legpress:['<ellipse class="muscle" cx="126" cy="97" rx="12" ry="6"/><ellipse class="muscle" cx="153" cy="80" rx="10" ry="5"/>','<ellipse class="muscle" cx="133" cy="90" rx="12" ry="6"/><ellipse class="muscle" cx="160" cy="69" rx="10" ry="5"/>'],
+extension:['<ellipse class="muscle" cx="118" cy="91" rx="12" ry="6"/>','<ellipse class="muscle" cx="130" cy="89" rx="13" ry="6"/>'],
+curl:['<ellipse class="muscle" cx="154" cy="80" rx="12" ry="6"/>','<ellipse class="muscle" cx="157" cy="72" rx="12" ry="6"/>'],
+hinge:['<ellipse class="muscle" cx="113" cy="83" rx="12" ry="6"/><ellipse class="muscle" cx="102" cy="104" rx="10" ry="5"/>','<ellipse class="muscle" cx="111" cy="82" rx="13" ry="6"/><ellipse class="muscle" cx="98" cy="101" rx="10" ry="5"/>'],
+bridge:['<ellipse class="muscle" cx="121" cy="97" rx="13" ry="7"/>','<ellipse class="muscle" cx="121" cy="83" rx="13" ry="7"/>'],
+abduction:['<ellipse class="muscle" cx="118" cy="86" rx="14" ry="7"/>','<ellipse class="muscle" cx="118" cy="86" rx="14" ry="7"/>'],
+calf:['<ellipse class="muscle" cx="106" cy="104" rx="6" ry="10"/><ellipse class="muscle" cx="135" cy="104" rx="6" ry="10"/>','<ellipse class="muscle" cx="106" cy="98" rx="6" ry="10"/><ellipse class="muscle" cx="135" cy="98" rx="6" ry="10"/>'],
+pulldown:['<ellipse class="muscle" cx="120" cy="72" rx="16" ry="9"/>','<ellipse class="muscle" cx="120" cy="74" rx="16" ry="9"/>'],
+row:['<ellipse class="muscle" cx="98" cy="72" rx="14" ry="8"/>','<ellipse class="muscle" cx="101" cy="73" rx="14" ry="8"/>'],
+press:['<ellipse class="muscle" cx="105" cy="60" rx="8" ry="6"/><ellipse class="muscle" cx="135" cy="60" rx="8" ry="6"/>','<ellipse class="muscle" cx="106" cy="52" rx="8" ry="6"/><ellipse class="muscle" cx="134" cy="52" rx="8" ry="6"/>'],
+lateral:['<ellipse class="muscle" cx="103" cy="63" rx="7" ry="6"/><ellipse class="muscle" cx="137" cy="63" rx="7" ry="6"/>','<ellipse class="muscle" cx="95" cy="61" rx="8" ry="6"/><ellipse class="muscle" cx="145" cy="61" rx="8" ry="6"/>'],
+curlarm:['<ellipse class="muscle" cx="105" cy="77" rx="6" ry="8"/><ellipse class="muscle" cx="135" cy="77" rx="6" ry="8"/>','<ellipse class="muscle" cx="107" cy="64" rx="6" ry="8"/><ellipse class="muscle" cx="133" cy="64" rx="6" ry="8"/>'],
+triceps:['<ellipse class="muscle" cx="138" cy="73" rx="6" ry="9"/>','<ellipse class="muscle" cx="138" cy="77" rx="6" ry="9"/>'],
+bench:['<ellipse class="muscle" cx="121" cy="86" rx="15" ry="7"/>','<ellipse class="muscle" cx="126" cy="82" rx="15" ry="7"/>'],
+pallof:['<ellipse class="muscle" cx="111" cy="72" rx="10" ry="12"/>','<ellipse class="muscle" cx="111" cy="72" rx="10" ry="12"/>'],
+deadbug:['<ellipse class="muscle" cx="118" cy="93" rx="12" ry="7"/>','<ellipse class="muscle" cx="118" cy="93" rx="12" ry="7"/>'],
+birddog:['<ellipse class="muscle" cx="111" cy="87" rx="13" ry="7"/>','<ellipse class="muscle" cx="111" cy="87" rx="13" ry="7"/>'],
+vacuum:['<ellipse class="muscle" cx="120" cy="69" rx="11" ry="14"/>','<ellipse class="muscle" cx="120" cy="69" rx="8" ry="14"/>'],
+step:['<ellipse class="muscle" cx="105" cy="93" rx="10" ry="6"/>','<ellipse class="muscle" cx="144" cy="78" rx="10" ry="6"/>'],
+squat:['<ellipse class="muscle" cx="108" cy="94" rx="11" ry="6"/><ellipse class="muscle" cx="132" cy="94" rx="11" ry="6"/>','<ellipse class="muscle" cx="100" cy="94" rx="11" ry="6"/><ellipse class="muscle" cx="140" cy="94" rx="11" ry="6"/>'],
+lunge:['<ellipse class="muscle" cx="113" cy="92" rx="10" ry="6"/>','<ellipse class="muscle" cx="100" cy="93" rx="10" ry="6"/>'],
+kick:['<ellipse class="muscle" cx="116" cy="86" rx="11" ry="7"/>','<ellipse class="muscle" cx="125" cy="84" rx="11" ry="7"/>'],
+plank:['<ellipse class="muscle" cx="117" cy="93" rx="14" ry="7"/>','<ellipse class="muscle" cx="117" cy="91" rx="14" ry="7"/>']
+};return (m[t]||['',''])[phase]||''};
+  return `<div class="exercise-demo" role="group" aria-label="Ilustração de como fazer ${e.name}"><div class="demo-grid"><div class="demo-panel"><span class="demo-step">1. Início</span><svg viewBox="0 0 240 135" role="img" aria-label="Posição inicial de ${e.name}">${frame}<g>${a}${muscle(0)}</g></svg></div><div class="demo-panel"><span class="demo-step">2. Movimento</span><svg viewBox="0 0 240 135" role="img" aria-label="Posição do movimento de ${e.name}">${frame}<g>${b}${muscle(1)}</g></svg></div></div><div class="demo-cue"><span>↔ ${labels[t]||'Execute o movimento com controle'}</span></div></div>`;
 }
 function render(){const w=currentWorkout();$('workoutName').textContent=w.name;$('workoutMeta').textContent=`${w.ex.length} exercícios • ~${S.lastDuration||60} min`;$('planPill').textContent=`${S.plan}x por semana`;$('timePill').textContent=`~${S.lastDuration||60} min`;$('phaseText').textContent=`FASE ${S.phase} • SEMANA ${S.week}/4`;$('phaseStat').textContent=`${S.phase} / 3`;$('weekStat').textContent=`${S.week} / 4`;$('waterGoal').textContent=S.waterGoal;$('waterNow').textContent=waterToday();const pct=Math.min(100,Math.round(waterToday()/S.waterGoal*100));$('waterPct').textContent=`${pct}%`;$('waterBar').style.width=pct+'%';$('plan3').classList.toggle('active',S.plan===3);$('plan5').classList.toggle('active',S.plan===5);$('weeklyWorkouts').textContent=`${weeklyWorkoutCount()} / ${S.plan}`;$('weeklyWater').textContent=`${weeklyWaterGoalDays()} dias`;renderWorkoutCards();renderWater();renderBody()}
 function renderWorkoutCards(){$('workoutCards').innerHTML=PROGRAMS[S.plan].map((p,i)=>`<div class="hist"><strong>${i+1}. ${p.name}</strong><span>${p.ids.length} exercícios</span><button type="button" style="margin-top:8px" onclick="openSpecificWorkout(${i})">Abrir treino</button></div>`).join('')}
@@ -234,8 +318,50 @@ selectChoice($('timeChoices'),'time','time');selectChoice($('energyChoices'),'en
 $('startBtn').onclick=()=>$('checkin').showModal();
 $('buildBtn').onclick=()=>{S.lastDuration=Number(check.time)||60;save();$('checkin').close();openWorkout(currentWorkout())};
 window.openSpecificWorkout=i=>openWorkout(workoutByIndex(i));
-function openWorkout(workout){session={workout:clone(workout),done:new Set(),start:Date.now()};$('dlgName').textContent=session.workout.name;$('dlgMeta').textContent=`${session.workout.ex.length} exercícios • ${S.lastDuration||60} min`;drawExercises();$('workoutDlg').showModal()}
-function drawExercises(){if(!session)return;const list=$('exerciseList');list.innerHTML='';session.workout.ex.forEach((e,i)=>{const key=`${S.phase}-${S.plan}-${session.workout.name}-${e.id}`,el=document.createElement('div');el.className='exercise'+(session.done.has(i)?' done':'');el.innerHTML=`<div class="exercise-head"><div><h3>${i+1}. ${e.name}</h3><div class="meta">${e.subtitle}</div></div><button type="button" class="icon-btn doneBtn">${session.done.has(i)?'✓':'○'}</button></div>${anim(e)}<span class="badge">${e.sets}</span><span class="badge">Descanso ${e.rest}</span><details><summary>Como fazer</summary><p>${e.how}</p><p><strong>Respiração:</strong> ${e.breath}</p><div class="note">Se ficar desconfortável, pare, recupere e retome somente se estiver tudo bem.</div></details><div class="grid2"><label>Carga (kg)<input class="load" type="number" inputmode="decimal" value="${S.loads[key]||''}"></label><label>Como ficou?<select><option>Na medida</option><option>Muito fácil</option><option>Muito pesado</option><option>Fiquei sem fôlego</option><option>Senti dor</option></select></label></div><div class="actions"><button type="button" class="swapBtn">🔄 Trocar exercício</button><button type="button" class="doneText">${session.done.has(i)?'Desmarcar':'✓ Concluir'}</button></div>`;el.querySelector('.load').onchange=x=>{S.loads[key]=x.target.value;save()};const tog=()=>{session.done.has(i)?session.done.delete(i):session.done.add(i);drawExercises()};el.querySelector('.doneBtn').onclick=tog;el.querySelector('.doneText').onclick=tog;el.querySelector('.swapBtn').onclick=()=>openSwap(i);list.appendChild(el)});$('doneCounter').textContent=`${session.done.size} de ${session.workout.ex.length} concluídos`;$('doneBar').style.width=(session.done.size/session.workout.ex.length*100)+'%'}
+function openWorkout(workout){
+  session={workout:clone(workout),done:new Set(),start:Date.now(),currentIndex:0};
+  $('dlgName').textContent=session.workout.name;
+  $('dlgMeta').textContent=`${session.workout.ex.length} exercícios • ~${S.lastDuration||60} min`;
+  drawExercises();
+  $('workoutDlg').showModal()
+}
+function drawExercises(){
+  if(!session)return;
+  const total=session.workout.ex.length;
+  session.currentIndex=Math.max(0,Math.min(session.currentIndex||0,total-1));
+  const i=session.currentIndex,e=session.workout.ex[i];
+  const key=`${S.phase}-${S.plan}-${session.workout.name}-${e.id}`;
+  const done=session.done.has(i);
+  const list=$('exerciseList');
+  list.innerHTML='';
+  const el=document.createElement('div');
+  el.className='exercise focus-exercise'+(done?' done':'');
+  el.innerHTML=`
+    <div class="exercise-kicker"><span>EXERCÍCIO ${i+1} DE ${total}</span><span class="done-mini">${session.done.size} concluído${session.done.size===1?'':'s'}</span></div>
+    ${anim(e)}
+    <div class="focus-title"><div><h3>${e.name}</h3><div class="meta">${e.subtitle}</div></div><button type="button" class="icon-btn doneBtn ${done?'is-done':''}" aria-label="Marcar exercício como concluído">${done?'✓':'○'}</button></div>
+    <div class="focus-stats"><div class="focus-stat"><small>SÉRIES / REPETIÇÕES</small><strong>${e.sets}</strong></div><div class="focus-stat"><small>DESCANSO</small><strong>${e.rest}</strong></div></div>
+    <details><summary>Como fazer corretamente</summary><p>${e.how}</p><p><strong>Respiração:</strong> ${e.breath}</p><div class="note">Se ficar desconfortável, pare, recupere e retome somente se estiver tudo bem.</div></details>
+    <div class="exercise-inputs"><label>Carga (kg)<input class="load" type="number" inputmode="decimal" value="${S.loads[key]||''}"></label><label>Como ficou?<select class="feel"><option>Na medida</option><option>Muito fácil</option><option>Muito pesado</option><option>Fiquei sem fôlego</option><option>Senti dor</option></select></label></div>
+    <button type="button" class="swap-primary">↻ Trocar exercício</button>
+    <div class="exercise-nav"><button type="button" class="prevExercise" ${i===0?'disabled':''}>← Voltar</button><button type="button" class="nextExercise">${i===total-1?(done?'Concluído ✓':'Concluir exercício ✓'):(done?'Próximo →':'Concluir e próximo →')}</button></div>
+  `;
+  list.appendChild(el);
+
+  el.querySelector('.load').onchange=x=>{S.loads[key]=x.target.value;save()};
+  el.querySelector('.doneBtn').onclick=()=>{done?session.done.delete(i):session.done.add(i);drawExercises()};
+  el.querySelector('.swap-primary').onclick=()=>openSwap(i);
+  el.querySelector('.prevExercise').onclick=()=>{if(i>0){session.currentIndex=i-1;drawExercises();document.querySelector('#workoutDlg .dialog-card').scrollTo({top:0,behavior:'smooth'})}};
+  el.querySelector('.nextExercise').onclick=()=>{
+    if(!session.done.has(i))session.done.add(i);
+    if(i<total-1){session.currentIndex=i+1;drawExercises();document.querySelector('#workoutDlg .dialog-card').scrollTo({top:0,behavior:'smooth'})}
+    else{drawExercises()}
+  };
+
+  $('doneCounter').textContent=`Exercício ${i+1} de ${total} • ${session.done.size} concluído${session.done.size===1?'':'s'}`;
+  $('doneBar').style.width=((i+1)/total*100)+'%';
+  $('finishBtn').style.display=i===total-1?'block':'none';
+}
 function availableAlternatives(cur){let ids=(cur.alts||[]).filter(id=>EX[id]&&id!==cur.id);if(ids.length<3){const extra=Object.keys(EX).filter(id=>EX[id].group===cur.group&&id!==cur.id&&!ids.includes(id));ids=ids.concat(extra).slice(0,4)}return ids}
 function openSwap(i){if(!session||!session.workout.ex[i])return;const cur=session.workout.ex[i],ids=availableAlternatives(cur);$('swapTitle').textContent=cur.name;const box=$('swapOptions');box.innerHTML='';if(!ids.length){box.innerHTML='<p class="muted">Não encontrei outra opção para este exercício.</p>';$('swapDlg').showModal();return}ids.forEach(id=>{const e=exObj(id),d=document.createElement('div');d.className='swap';d.innerHTML=`<strong>${e.name}</strong><span class="muted small">${e.subtitle} • ${e.sets}</span>${anim(e)}<button type="button" class="full useSwap">Usar este exercício</button>`;d.querySelector('.useSwap').onclick=ev=>{ev.preventDefault();ev.stopPropagation();session.workout.ex.splice(i,1,e);session.done.delete(i);$('swapDlg').close();drawExercises();setTimeout(()=>{const cards=$('exerciseList').querySelectorAll('.exercise');cards[i]?.scrollIntoView({behavior:'smooth',block:'center'})},50)};box.appendChild(d)});$('swapDlg').showModal()}
 $('finishBtn').onclick=()=>{if(!session)return;const m=Math.max(1,Math.round((Date.now()-session.start)/60000));S.workoutHistory.push({date:new Date().toISOString(),workout:session.workout.name,duration:m,exercises:session.workout.ex.map(e=>e.id)});save();$('workoutDlg').close();$('storyWorkout').textContent=session.workout.name;$('storyDuration').textContent=m+' min';$('storyDetails').textContent=`${session.done.size}/${session.workout.ex.length} exercícios concluídos • Fase ${S.phase} • Semana ${S.week}`;$('storyDate').textContent=new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'long'});$('storyDlg').showModal();render()};
