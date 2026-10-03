@@ -1,0 +1,10 @@
+{
+  "id": "./?perfil=1",
+  "name": "Larissa Fit",
+  "short_name": "Larissa Fit",
+  "start_url": "./?perfil=1",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F8F7FC",
+  "theme_color": "#6F55D9"
+}
