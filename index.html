@@ -707,6 +707,6 @@ document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{document.q
 setInterval(()=>{if(!S.settings.interval||!('Notification'in window)||Notification.permission!=='granted')return;const now=new Date(),mins=now.getHours()*60+now.getMinutes(),[sh,sm]=S.settings.start.split(':').map(Number),[eh,em]=S.settings.end.split(':').map(Number);if(mins<sh*60+sm||mins>eh*60+em)return;const last=Number(localStorage.getItem('lastWaterReminder')||0);if(Date.now()-last>=S.settings.interval*60000){const missing=Math.max(0,S.waterGoal-waterToday());new Notification('💧 Hora da água',{body:missing?`Faltam ${missing} ml para sua meta de hoje.`:'Meta batida! Continue se hidratando conforme sua necessidade.'});localStorage.setItem('lastWaterReminder',Date.now())}},60000);
 save();render();if('serviceWorker'in navigator){let refreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});navigator.serviceWorker.register('./sw.js?v=12').then(reg=>reg.update()).catch(()=>{})}
 </script>
-<script src="profiles.js?v=1"></script>
+<script src="profiles.js?v=2"></script>
 </body></html>
 
