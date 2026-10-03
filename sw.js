@@ -1,4 +1,4 @@
-const CACHE='larissa-fit-v11-20261002';
+const CACHE='larissa-fit-v12-20261002';
 const ASSETS=['./','./index.html','./manifest.json'];
 self.addEventListener('install',event=>{
   self.skipWaiting();
@@ -12,7 +12,7 @@ self.addEventListener('activate',event=>{
 });
 self.addEventListener('fetch',event=>{
   if(event.request.mode==='navigate'){
-    event.respondWith(fetch(event.request).then(response=>{
+    event.respondWith(fetch(event.request,{cache:'no-store'}).then(response=>{
       const copy=response.clone();
       caches.open(CACHE).then(cache=>cache.put('./index.html',copy));
       return response;
