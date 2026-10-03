@@ -411,7 +411,7 @@ input,select{
 </style>
 </head>
 <body>
-<div class="app">
+<style>html.fit-individual main,html.fit-individual .bottom{display:none}html.fit-ready main:not([hidden]),html.fit-ready .bottom:not([hidden]){display:block}html.fit-ready .bottom:not([hidden]){display:grid}</style><script>if(new URLSearchParams(location.search).get("perfil")==="1")document.documentElement.classList.add("fit-individual");</script><div class="app">
 <header class="topbar"><div><p class="eyebrow">LARISSA • FIT</p><h1 id="pageTitle">Seu treino de hoje</h1><p class="muted" id="phaseText"></p></div><button class="icon-btn" id="settingsBtn">⚙️</button></header>
 <main>
 <section class="page active" data-page="home"><section class="card hero"><div class="hero-top"><span class="pill" id="planPill"></span><span class="pill secondary" id="timePill"></span></div><h2 id="workoutName"></h2><p id="workoutMeta" class="muted"></p><button class="primary full" id="startBtn">Fazer check-in e montar treino</button></section><section class="card"><div class="section-head"><div><p class="eyebrow">ÁGUA HOJE</p><h2><span id="waterNow"></span> / <span id="waterGoal"></span> ml</h2></div><strong id="waterPct" class="big"></strong></div><div class="progress"><div id="waterBar"></div></div><div class="quick"><button data-water="200">+200</button><button data-water="300">+300</button><button data-water="500">+500</button><button id="undoWater">↶</button></div></section><section class="card"><p class="eyebrow">ESTA SEMANA</p><h2>Seu progresso</h2><div class="stats"><div><span>Treinos</span><strong id="weeklyWorkouts"></strong></div><div><span>Água na meta</span><strong id="weeklyWater"></strong></div><div><span>Fase</span><strong id="phaseStat"></strong></div><div><span>Semana</span><strong id="weekStat"></strong></div></div></section><section class="card"><p class="eyebrow">PROGRAMA</p><h2>Frequência desta semana</h2><div class="seg"><button id="plan3">3 dias</button><button id="plan5">5 dias</button></div><p class="muted small">O app reorganiza a semana quando você muda a frequência.</p></section></section>
@@ -439,10 +439,11 @@ input,select{
 })();
 const $=id=>document.getElementById(id);
 const clone=o=>JSON.parse(JSON.stringify(o));
-const STORE='larissaFitV4';
-let old={};try{old=JSON.parse(localStorage.getItem('larissaFitV2')||localStorage.getItem('larissaFit')||'{}')}catch(e){}
+const INDIVIDUAL_MODE=new URLSearchParams(location.search).get('perfil')==='1';
+const STORE=INDIVIDUAL_MODE?'larissaFitIndividualBoot':'larissaFitV4';
+let old={};try{if(!INDIVIDUAL_MODE)old=JSON.parse(localStorage.getItem('larissaFitV2')||localStorage.getItem('larissaFit')||'{}')}catch(e){}
 const S=Object.assign({plan:3,phase:1,week:1,waterGoal:2000,water:{},workoutHistory:[],loads:{},bodyEntries:[],settings:{interval:90,start:'08:00',end:'22:00'},lastDuration:60},old,JSON.parse(localStorage.getItem(STORE)||'{}'));
-function save(){localStorage.setItem(STORE,JSON.stringify(S))}
+function save(){if(!INDIVIDUAL_MODE)localStorage.setItem(STORE,JSON.stringify(S))}
 const EX={
 legpress:{name:'Leg press',subtitle:'Pernas e glúteos',sets:'3×10–12',rest:'90s',how:'Sente com as costas apoiadas, pés firmes na plataforma. Desça controlando e empurre sem travar os joelhos.',breath:'Solte o ar enquanto empurra.',group:'legs',anim:'legpress',alts:['goblet','benchSquat','lunge']},
 extensora:{name:'Cadeira extensora',subtitle:'Frente da coxa',sets:'3×12–15',rest:'75s',how:'Ajuste o apoio acima do tornozelo. Estenda as pernas sem dar tranco e volte devagar.',breath:'Solte o ar ao estender.',group:'legs',anim:'extension',alts:['goblet','stepup','benchSquat']},
@@ -706,4 +707,6 @@ document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{document.q
 setInterval(()=>{if(!S.settings.interval||!('Notification'in window)||Notification.permission!=='granted')return;const now=new Date(),mins=now.getHours()*60+now.getMinutes(),[sh,sm]=S.settings.start.split(':').map(Number),[eh,em]=S.settings.end.split(':').map(Number);if(mins<sh*60+sm||mins>eh*60+em)return;const last=Number(localStorage.getItem('lastWaterReminder')||0);if(Date.now()-last>=S.settings.interval*60000){const missing=Math.max(0,S.waterGoal-waterToday());new Notification('💧 Hora da água',{body:missing?`Faltam ${missing} ml para sua meta de hoje.`:'Meta batida! Continue se hidratando conforme sua necessidade.'});localStorage.setItem('lastWaterReminder',Date.now())}},60000);
 save();render();if('serviceWorker'in navigator){let refreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});navigator.serviceWorker.register('./sw.js?v=12').then(reg=>reg.update()).catch(()=>{})}
 </script>
+<script src="profiles.js?v=1"></script>
 </body></html>
+
