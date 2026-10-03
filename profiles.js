@@ -2,6 +2,7 @@
 (() => {
 const enabled=new URLSearchParams(location.search).get('perfil')==='1';
 if(!enabled)return;
+const manifest=document.querySelector('link[rel="manifest"]');if(manifest)manifest.href='profiles.webmanifest';
 const URL_BASE='https://oripkyichxkrihnaxbwe.supabase.co';
 const KEY='sb_publishable_zB9SfLDFMQyIYnzaIJ-bNA_AtKEUO5p';
 const TOKEN_KEY='larissaFitAuth';
