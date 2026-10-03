@@ -3,6 +3,6 @@
   "short_name": "Larissa Fit",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f5f6f8",
-  "theme_color": "#111111"
+  "background_color": "#F8F7FC",
+  "theme_color": "#6F55D9"
 }
