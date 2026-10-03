@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F8F7FC">
+<meta name="theme-color" content="#EFE9FA">
 <title>Larissa Fit</title>
 <link rel="manifest" href="manifest.json">
 <style>
@@ -294,6 +294,120 @@ input:focus,select:focus{
   #workoutDlg .dialog-card{padding:14px}
 }
 
+/* V12 — lilás mais visível em todo o app */
+body{
+  background:
+    radial-gradient(circle at 50% -8%,rgba(168,150,234,.28),transparent 30%),
+    linear-gradient(180deg,#F1ECFA 0%,#F7F4FC 48%,#F3EFFA 100%);
+}
+.topbar{
+  background:linear-gradient(135deg,rgba(255,255,255,.78),rgba(238,233,255,.88));
+  border:1px solid #E2D9F4;
+  border-radius:22px;
+  padding:14px 14px 12px;
+  box-shadow:0 8px 24px rgba(85,63,143,.07);
+  margin-bottom:8px
+}
+.topbar h1{color:#2A2240}
+.topbar .eyebrow{color:#6542D8}
+.card{
+  background:linear-gradient(180deg,#FFFFFF 0%,#FBF9FF 100%);
+  border-color:#E2D9F2;
+}
+.card:not(.hero) .eyebrow{color:#766A93}
+.hero{
+  background:linear-gradient(145deg,#FFFFFF 20%,#F0E9FF 100%);
+  border-color:#DCCFF3;
+}
+.stats div{
+  background:linear-gradient(145deg,#F5F0FF,#EEE7FF);
+  border-color:#DFD4F2
+}
+.quick button{
+  background:#F7F3FF;
+  color:#5E45C4;
+  border-color:#DDD1F4
+}
+.quick button:active{background:#ECE4FF}
+.seg{
+  background:#EDE6F9;
+  border:1px solid #DED3F0
+}
+.seg .active{
+  color:#5E45C4;
+  box-shadow:0 5px 14px rgba(92,65,178,.10)
+}
+.hist,.swap{
+  background:linear-gradient(180deg,#FFFFFF,#F9F6FF);
+  border-color:#E4DCF1
+}
+.phase div{border-bottom-color:#E4DCF1}
+.bottom{
+  background:rgba(247,243,255,.96);
+  border-top-color:#DDD3EE;
+}
+.bottom button.active{
+  color:#6542D8;
+  background:#EEE7FF;
+  border-radius:14px
+}
+.bottom button{padding:6px 4px}
+.primary{
+  background:linear-gradient(135deg,#765BE0,#6542D8);
+}
+#workoutDlg{
+  background:linear-gradient(180deg,#F2ECFA,#F8F5FC);
+}
+#workoutDlg .dialog-card{
+  background:linear-gradient(180deg,#F2ECFA,#F8F5FC);
+}
+#workoutDlg .sticky{
+  background:rgba(242,236,250,.96);
+}
+.focus-exercise{
+  background:linear-gradient(180deg,#FFFFFF,#FCFAFF)!important;
+  border-color:#E0D7EF!important
+}
+.focus-stat{
+  background:#F1EBFB;
+  border-color:#DED4EF
+}
+.focus-exercise details{
+  background:#F5F0FB;
+  border-color:#E1D8F0
+}
+.exercise-inputs input,.exercise-inputs select{
+  background:#FCFAFF;
+  border-color:#DDD3ED
+}
+.swap-primary{
+  background:#EEE7FF;
+  border-color:#D5C5F3;
+}
+.exercise-demo{
+  background:linear-gradient(145deg,#EEE7FF,#F8F5FF);
+}
+.motion-stage{
+  background:linear-gradient(180deg,#FFFFFF,#F7F2FF);
+  border-color:#DED3F0
+}
+.motion-hint span{
+  background:#F8F4FF;
+  border-color:#DED3F0;
+  color:#5B4C78
+}
+dialog:not(#workoutDlg) .dialog-card{
+  background:linear-gradient(180deg,#FBF9FF,#F4EFFB)
+}
+.choice button{
+  background:#F8F4FF;
+  border-color:#DED3F0
+}
+input,select{
+  background:#FCFAFF;
+  border-color:#DED3F0
+}
+
 </style>
 </head>
 <body>
@@ -314,6 +428,15 @@ input:focus,select:focus{
 <dialog id="storyDlg"><form method="dialog" class="dialog-card"><div class="dialog-head"><div><p class="eyebrow">TREINO CONCLUÍDO</p><h2>Finalizado 💪</h2></div><button class="icon-btn" value="cancel">✕</button></div><div class="story"><p>LARISSA FIT</p><h2 id="storyWorkout"></h2><div class="num" id="storyDuration"></div><p id="storyDetails"></p><span id="storyDate"></span></div><button type="button" class="primary full" id="shareBtn">Compartilhar</button></form></dialog>
 <dialog id="settingsDlg"><form method="dialog" class="dialog-card"><div class="dialog-head"><div><p class="eyebrow">AJUSTES</p><h2>Preferências</h2></div><button class="icon-btn" value="cancel">✕</button></div><label>Meta de água<input id="goalInput" type="number" min="500" step="100"></label><label>Lembretes<select id="reminder"><option value="0">Desativados</option><option value="60">A cada 1 hora</option><option value="90">A cada 1h30</option><option value="120">A cada 2 horas</option></select></label><div class="grid2"><label>Começar<input id="rStart" type="time"></label><label>Terminar<input id="rEnd" type="time"></label></div><button type="button" class="primary full" id="saveSettings">Salvar</button><p class="asset-credit">Ilustrações de exercícios por <a href="https://repdb.co" target="_blank" rel="noopener">RepDB</a>.</p></form></dialog>
 <script>
+(function(){
+  const APP_VERSION='12';
+  const key='larissaFitSeenVersion';
+  if(localStorage.getItem(key)!==APP_VERSION){
+    localStorage.setItem(key,APP_VERSION);
+    const u=new URL(location.href);
+    if(u.searchParams.get('v')!==APP_VERSION){u.searchParams.set('v',APP_VERSION);location.replace(u.toString());}
+  }
+})();
 const $=id=>document.getElementById(id);
 const clone=o=>JSON.parse(JSON.stringify(o));
 const STORE='larissaFitV4';
@@ -581,6 +704,6 @@ $('settingsBtn').onclick=()=>{$('goalInput').value=S.waterGoal;$('reminder').val
 $('plan3').onclick=()=>{S.plan=3;save();render()};$('plan5').onclick=()=>{S.plan=5;save();render()};document.querySelectorAll('[data-water]').forEach(b=>b.onclick=()=>setWater(waterToday()+Number(b.dataset.water)));$('undoWater').onclick=()=>setWater(waterToday()-200);$('customWater').onclick=()=>{const v=Number(prompt('Quantos ml você bebeu?','250'));if(v>0)setWater(waterToday()+v)};
 document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelector(`[data-page="${b.dataset.tab}"]`).classList.add('active');$('pageTitle').textContent=b.dataset.tab==='home'?'Seu treino de hoje':b.dataset.tab==='workouts'?'Seus treinos':b.dataset.tab==='water'?'Hidratação':'Sua evolução'});
 setInterval(()=>{if(!S.settings.interval||!('Notification'in window)||Notification.permission!=='granted')return;const now=new Date(),mins=now.getHours()*60+now.getMinutes(),[sh,sm]=S.settings.start.split(':').map(Number),[eh,em]=S.settings.end.split(':').map(Number);if(mins<sh*60+sm||mins>eh*60+em)return;const last=Number(localStorage.getItem('lastWaterReminder')||0);if(Date.now()-last>=S.settings.interval*60000){const missing=Math.max(0,S.waterGoal-waterToday());new Notification('💧 Hora da água',{body:missing?`Faltam ${missing} ml para sua meta de hoje.`:'Meta batida! Continue se hidratando conforme sua necessidade.'});localStorage.setItem('lastWaterReminder',Date.now())}},60000);
-save();render();if('serviceWorker'in navigator){let refreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});navigator.serviceWorker.register('./sw.js?v=11').then(reg=>reg.update()).catch(()=>{})}
+save();render();if('serviceWorker'in navigator){let refreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});navigator.serviceWorker.register('./sw.js?v=12').then(reg=>reg.update()).catch(()=>{})}
 </script>
 </body></html>
